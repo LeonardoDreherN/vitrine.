@@ -1,3 +1,22 @@
+// ── Splash ───────────────────────────────────
+const splash = document.getElementById('splash');
+if (splash) {
+  document.body.style.overflow = 'hidden';
+  let gone = false;
+  const dismiss = () => {
+    if (gone) return;
+    gone = true;
+    splash.classList.add('hide');
+    document.body.style.overflow = '';
+    setTimeout(() => splash.remove(), 700);
+  };
+  setTimeout(() => {
+    window.addEventListener('wheel',     dismiss, { once: true });
+    window.addEventListener('touchmove', dismiss, { once: true, passive: true });
+    window.addEventListener('keydown',   dismiss, { once: true });
+  }, 700);
+}
+
 // ── NAV scroll ──────────────────────────────
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
