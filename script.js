@@ -72,7 +72,7 @@ document.querySelectorAll('.faq-q').forEach(btn => {
 
 // ── Reveal on scroll ─────────────────────────
 const reveals = document.querySelectorAll(
-  '.step, .feature, .plan, .faq-item, .compare-card'
+  '.step, .feature, .faq-item, .compare-card'
 );
 reveals.forEach(el => el.setAttribute('data-reveal', ''));
 
