@@ -118,18 +118,30 @@ if (wa) {
 const form = document.getElementById('form');
 const formOk = document.getElementById('formOk');
 
-form.addEventListener('submit', e => {
+form.addEventListener('submit', async e => {
   e.preventDefault();
   const btn = form.querySelector('.btn-submit');
   const label = btn.querySelector('.btn-label');
   btn.disabled = true;
   label.textContent = 'Enviando...';
 
-  // troca pelo endpoint real
-  setTimeout(() => {
-    form.style.display = 'none';
-    formOk.classList.add('show');
-  }, 1200);
+  try {
+    const res = await fetch('https://formsubmit.co/ajax/byvitrinebr@gmail.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(Object.fromEntries(new FormData(form)))
+    });
+    if (res.ok) {
+      form.style.display = 'none';
+      formOk.classList.add('show');
+    } else {
+      label.textContent = 'Erro ao enviar. Tente novamente.';
+      btn.disabled = false;
+    }
+  } catch {
+    label.textContent = 'Erro ao enviar. Tente novamente.';
+    btn.disabled = false;
+  }
 });
 
 // ── Smooth scroll ────────────────────────────
