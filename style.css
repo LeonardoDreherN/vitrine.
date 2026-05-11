@@ -40,9 +40,10 @@
 }
 
 .splash-logo {
+  font-family: var(--font-serif);
   font-size: clamp(64px, 16vw, 140px);
   font-weight: 800;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
   color: var(--ink);
   text-decoration: none;
 }
@@ -96,10 +97,10 @@
   --border: #E2DDD8;
   --border-dark: #CCCAC6;
 
-  --accent: #4F46E5;
-  --accent-hover: #3730A3;
-  --accent-light: #EEF2FF;
-  --accent-text: #4338CA;
+  --accent: #C4A356;
+  --accent-hover: #A8883E;
+  --accent-light: #FAF6EC;
+  --accent-text: #9A7A32;
   --green: #16A34A;
   --green-light: #DCFCE7;
   --red-light: #FEE2E2;
@@ -114,6 +115,7 @@
   --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
 
   --font: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -301,11 +303,12 @@ body {
 }
 
 .logo {
-  font-size: 20px;
+  font-family: var(--font-serif);
+  font-size: 22px;
   font-weight: 800;
   color: var(--ink);
   text-decoration: none;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   flex-shrink: 0;
 }
 
